@@ -1,0 +1,35 @@
+[build-system]
+requires = ["setuptools>=46.1.0", "wheel", "setuptools-git-versioning>=2.0,<3", ]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools-git-versioning]
+enabled = true
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+
+[project.scripts]
+grove-watcher = "grove_watcher.__main__:find"  # Updated the entry point
+
+[project]
+name = "grove-watcher"
+dynamic = ["version"]
+description = "Tree Sitter grammar fetcher for Python"
+authors = [{name = "ukw2d", email = "ukw2d@outlook.com"}]
+license = {text = "MIT"}
+readme = "README.md" 
+requires-python = ">=3.9"
+dependencies = [
+    "importlib-metadata",
+    "tree-sitter<0.24.0",
+    "pydantic",
+    "pydantic_settings",
+]
+
+[project.urls]
+homepage = "https://github.com/ukw2d/py-grove-watcher"
+repository = "https://github.com/ukw2d/py-grove-watcher"
+documentation = "https://github.com/ukw2d/py-grove-watcher"

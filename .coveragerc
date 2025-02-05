@@ -1,0 +1,33 @@
+[run]
+# Enable branch coverage
+branch = True
+# Specify the source directories
+source = src/grove_watcher
+
+# Omit specific files or directories if needed
+omit =
+    tests/*
+    */site-packages/*
+    *.venv/*
+
+[paths]
+# Define the source paths
+source =
+    src/
+    */site-packages/
+
+[report]
+# Exclude specific lines from coverage analysis
+exclude_lines =
+    # Standard pragma for excluding lines
+    pragma: no cover
+
+    # Debugging or defensive code
+    def __repr__
+    if self\.debug
+    raise AssertionError
+    raise NotImplementedError
+
+    # Non-runnable or conditional code
+    if 0:
+    if __name__ == .__main__.:
