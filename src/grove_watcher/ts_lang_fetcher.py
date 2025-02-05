@@ -16,8 +16,6 @@ class TreeSitterInit:
     def __init__(self, venv_manager: VenvManager = None):
         """
         Initialize TreeSitterInit with a logger and optional virtual environment support.
-        :param logger: Logger instance for logging messages.
-        :param use_venv: If True, use a dedicated virtual environment for installations (as a cache).
         """
         self.logger = logging.getLogger(f"{__name__}.{self.__class__.__name__}")
         self.config = TreeSitterConfig()
