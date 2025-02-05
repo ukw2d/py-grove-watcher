@@ -12,7 +12,7 @@ enabled = true
 testpaths = ["tests"]
 
 [project.scripts]
-grove-watcher = "grove_watcher.__main__:find"  # Updated the entry point
+grove-watcher = "grove_watcher.__main__:find"
 
 [project]
 name = "grove-watcher"
