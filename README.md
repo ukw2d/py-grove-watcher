@@ -11,7 +11,7 @@
 <!-- Badges -->
 <p>
   <a href="https://pypi.python.org/pypi/grove-watcher">
-      <img src="https://img.shields.io/pypi/v/py-grove-watcher.svg" 
+      <img src="https://img.shields.io/pypi/v/grove-watcher.svg" 
       alt="forks" />
     </a>
   <a href="">
