@@ -149,6 +149,27 @@ This will create a dedicated virtual environment in the cache directory (the pat
 
 That's it! Hope this module saves you time and reduces your code complexity. 😊
 
+<!--Return Value -->
+## Return Value
+The `find` function in GroveWatcher returns a `TSGrammarModel` `Pydantic` object, which encapsulates the Tree-Sitter grammar and parser. This object is defined as follows:
+
+```python
+from pydantic import BaseModel, ConfigDict
+from tree_sitter import Language, Parser
+
+class TSGrammarModel(BaseModel):
+    lang: Language
+    parser: Parser
+    model_config = ConfigDict(
+        arbitrary_types_allowed=True,
+        extra='forbid',
+        frozen=True
+    )
+```
+`lang` : A Language object from the Tree-Sitter library, representing the installed grammar for the specified language.
+
+`parser` : A Parser object configured with the corresponding Language, ready to parse source code in the specified language.
+
 <!-- Contributing -->
 ## Contributing
 Contributions are always welcome!
