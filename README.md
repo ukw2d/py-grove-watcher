@@ -57,6 +57,7 @@
     - [Prerequisites](#prerequisites)
     - [Installation](#installation)
   - [Usage](#usage)
+  - [Return Value](#return-value)
   - [Contributing](#contributing)
   - [License](#license)
   - [Contact](#contact)
