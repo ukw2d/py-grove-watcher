@@ -1,3 +1,12 @@
 {
-    "prefixes": ["tree_sitter_"]
+    "prefixes": ["tree_sitter_"],
+    "cacheDir": {
+        "win32": "LOCALAPPDATA",
+        "unix": ".cache"
+    },
+    "venvExecutable": {
+        "win32": "Scripts/python.exe",
+        "unix": "bin/python",
+        "default": "python"
+    }
 }

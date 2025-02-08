@@ -26,7 +26,7 @@
   <a href="https://github.com/ukw2d/py-grove-watcher/issues/">
     <img src="https://img.shields.io/github/issues/ukw2d/py-grove-watcher" alt="open issues" />
   </a>
-  <a href="https://github.com/ukw2d/py-grove-watcher/blob/master/LICENSE">
+  <a href="https://github.com/ukw2d/py-grove-watcher/blob/master/LICENSE.txt">
     <img src="https://img.shields.io/github/license/ukw2d/py-grove-watcher.svg" 
     alt="license" />
   </a>
@@ -87,23 +87,23 @@
 
 #### Environment Variables
 
-`.env` is used to store default path values required for the optional dedicated venv that is used for grammar (pip packages) caching.
+You can use your `.env` to override path values required for the optional dedicated venv that is used for grammar (pip packages) caching.
 
-- `CACHE_DIR_WIN32` - Path to the optional dedicated venv directory for Windows platform
+- `GW_CACHE_DIR_WIN32` - Override Path to the optional dedicated venv directory for Windows platform
 
-- `CACHE_DIR_UNIX` - Path to the optional dedicated venv directory for Unix platforms
+- `GW_CACHE_DIR_UNIX` - Override Path to the optional dedicated venv directory for Unix platforms
 
-- `VENV_EXECUTABLE_WIN32` - Path to the optional dedicated venv Python executable for Windows platform
+- `GW_VENV_EXECUTABLE_WIN32` - Override Path to the optional dedicated venv Python executable for Windows platform
 
-- `VENV_EXECUTABLE_UNIX`  - Path to the optional dedicated venv Python executable for Unix platforms
+- `GW_VENV_EXECUTABLE_UNIX`  - Override Path to the optional dedicated venv Python executable for Unix platforms
 
-- `VENV_EXECUTABLE_DEFAULT_EXECUTABLE` - Python executable name used for the optional dedicated venv
+- `GW_VENV_EXECUTABLE_DEFAULT_EXECUTABLE` - Override Python executable name used for the optional dedicated venv
 
 
 #### Config files
-`src/grove_watcher/config/config.json` - json used for pip packages prefixes. As per naming convention of the tree_sitter grammar pip packages. There is only 1 value there for now which should be enough.
+`src/grove_watcher/config/config.json` - json used for tree-sitter grammar pip packages prefixes and default venv path values.
 
-`src/grove_watcher/config/logging.json` - json used for logging configuration. You can change the values as per your requirements.
+`src/grove_watcher/config/logging.json` - json used for logging configuration.
 
 
 <!-- Getting Started -->
