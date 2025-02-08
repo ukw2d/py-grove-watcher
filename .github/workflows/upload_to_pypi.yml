@@ -1,5 +1,4 @@
 name: Upload to PyPI
-
 on:
   push:
     branches:
@@ -20,13 +19,19 @@ jobs:
       - name: Install dependencies
         run: |
           python -m pip install --upgrade pip
-          pip install build twine setuptools_git_versioning
+          pip install build twine setuptools setuptools-git-versioning
 
-      - name: Check package version
-        run: python -m setuptools_git_versioning
+      - name: Clean old build files
+        run: rm -rf build dist src/grove_watcher.egg-info
+
+      - name: Verify MANIFEST.in is included
+        run: cat MANIFEST.in
 
       - name: Build distribution packages
-        run: python -m build
+        run: python -m build --sdist --wheel
+
+      - name: Check package contents
+        run: tar -tzf dist/*.tar.gz | grep "config/"
 
       - name: Publish package to Test PyPI
         run: twine upload --repository testpypi dist/* --non-interactive --verbose
@@ -49,13 +54,13 @@ jobs:
       - name: Install dependencies
         run: |
           python -m pip install --upgrade pip
-          pip install build twine setuptools_git_versioning
+          pip install build twine setuptools setuptools-git-versioning
 
-      - name: Check package version
-        run: python -m setuptools_git_versioning
+      - name: Clean old build files
+        run: rm -rf build dist src/grove_watcher.egg-info
 
       - name: Build distribution packages
-        run: python -m build
+        run: python -m build --sdist --wheel
 
       - name: Publish package to PyPI
         run: twine upload dist/* --non-interactive

@@ -1,0 +1,2 @@
+include src/grove_watcher/config/*.json
+recursive-include src/grove_watcher/config *.json
